@@ -1,0 +1,146 @@
+[0m23:49:51.750459 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020163E44CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020165CD70D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020168603FD0>]}
+
+
+============================== 23:49:51.771989 | e138f4bf-53b7-4d1c-aee9-1c8f95d91ee4 ==============================
+[0m23:49:51.771989 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m23:49:51.774012 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\iliop\\.dbt', 'invocation_command': 'dbt init', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m23:49:51.775028 [debug] [MainThread]: Tracking: tracking
+[0m23:49:51.855660 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\iliop\.dbt
+[0m23:50:15.069711 [debug] [MainThread]: Starter project path: C:\Users\iliop\Documents\ecommerce-analytics-dbt\venv\Lib\site-packages\dbt\include\starter_project
+[0m23:50:15.176177 [info ] [MainThread]: Setting up your profile.
+[0m23:51:27.297020 [info ] [MainThread]: Profile thelook_analytics written to C:\Users\iliop\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m23:51:27.301362 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m23:51:27.302382 [info ] [MainThread]: dbt version: 1.13.0-b1
+[0m23:51:27.304507 [info ] [MainThread]: python version: 3.11.9
+[0m23:51:27.304507 [info ] [MainThread]: python path: C:\Users\iliop\Documents\ecommerce-analytics-dbt\venv\Scripts\python.exe
+[0m23:51:27.305882 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m23:51:27.397239 [info ] [MainThread]: Using profiles dir at C:\Users\iliop\.dbt
+[0m23:51:27.397239 [info ] [MainThread]: Using profiles.yml file at C:\Users\iliop\.dbt\profiles.yml
+[0m23:51:27.398242 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\iliop\Documents\ecommerce-analytics-dbt\thelook_analytics\dbt_project.yml
+[0m23:51:27.398242 [info ] [MainThread]: adapter type: bigquery
+[0m23:51:27.399453 [info ] [MainThread]: adapter version: 1.12.1
+[0m23:51:27.521465 [info ] [MainThread]: Configuration:
+[0m23:51:27.522559 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:51:27.523565 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:51:27.523565 [info ] [MainThread]: Required dependencies:
+[0m23:51:27.524671 [debug] [MainThread]: Executing "git --help"
+[0m23:51:27.583159 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:51:27.584423 [debug] [MainThread]: STDERR: "b''"
+[0m23:51:27.584423 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:51:27.585477 [info ] [MainThread]: Connection:
+[0m23:51:27.586592 [info ] [MainThread]:   method: oauth
+[0m23:51:27.586592 [info ] [MainThread]:   database: robotic-facet-511621-i4
+[0m23:51:27.587823 [info ] [MainThread]:   execution_project: robotic-facet-511621-i4
+[0m23:51:27.588838 [info ] [MainThread]:   schema: ecommerce_staging
+[0m23:51:27.588838 [info ] [MainThread]:   location: US
+[0m23:51:27.588838 [info ] [MainThread]:   priority: interactive
+[0m23:51:27.590267 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m23:51:27.591268 [info ] [MainThread]:   reservation: None
+[0m23:51:27.591268 [info ] [MainThread]:   impersonate_service_account: None
+[0m23:51:27.592582 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m23:51:27.593596 [info ] [MainThread]:   job_retries: 1
+[0m23:51:27.593596 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m23:51:27.595069 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m23:51:27.596292 [info ] [MainThread]:   job_link_info_level_log: False
+[0m23:51:27.596292 [info ] [MainThread]:   timeout_seconds: 300
+[0m23:51:27.597772 [info ] [MainThread]:   client_id: None
+[0m23:51:27.598776 [info ] [MainThread]:   token_uri: None
+[0m23:51:27.598776 [info ] [MainThread]:   compute_region: None
+[0m23:51:27.601157 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m23:51:27.601157 [info ] [MainThread]:   gcs_bucket: None
+[0m23:51:27.602274 [info ] [MainThread]:   dataproc_batch: None
+[0m23:51:27.603332 [info ] [MainThread]: Registered adapter: bigquery=1.12.1
+[0m23:51:28.622645 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m23:51:28.622645 [debug] [MainThread]: On debug: select 1 as id
+[0m23:51:28.623672 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:51:32.551352 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=robotic-facet-511621-i4&j=bq:US:d5eea641-430d-4075-b0af-d1e86b158713&page=queryresults
+[0m23:51:32.948359 [debug] [MainThread]: SQL status: OK in 0.396 seconds
+[0m23:51:36.986639 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:51:36.987647 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:51:36.987647 [info ] [MainThread]: Your new dbt project "thelook_analytics" was created!
+Initialized new project in C:\Users\iliop\Documents\ecommerce-analytics-dbt\thelook_analytics\thelook_analytics
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:51:36.990133 [debug] [MainThread]: Command `dbt init` succeeded at 23:51:36.990133 after 105.37 seconds
+[0m23:51:36.990133 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m23:51:36.991639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020168678390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000201686BBFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000201686BBE10>]}
+[0m23:51:36.991639 [debug] [MainThread]: Flushing usage events
+[0m23:51:37.847788 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:48:54.510174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002592BD60310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002592BD77DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002592BD77E50>]}
+
+
+============================== 09:48:54.517764 | cba9f755-cd48-4075-adeb-f253b6ceb995 ==============================
+[0m09:48:54.517764 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m09:48:54.517764 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\iliop\\.dbt', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'log_path': 'logs'}
+[0m09:48:54.519185 [debug] [MainThread]: Tracking: tracking
+[0m09:48:54.519185 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\iliop\Documents\ecommerce-analytics-dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m09:48:54.521751 [debug] [MainThread]: Command `dbt run` failed at 09:48:54.521751 after 0.15 seconds
+[0m09:48:54.521751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002592BD76F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002592BD75150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002592BC76DD0>]}
+[0m09:48:54.523128 [debug] [MainThread]: Flushing usage events
+[0m09:48:55.416971 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:54:41.689534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B62257A590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6223D0F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B622497B90>]}
+
+
+============================== 18:54:41.698246 | 3268eceb-4471-4da9-8034-1edc6f354113 ==============================
+[0m18:54:41.698246 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m18:54:41.699749 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\iliop\\.dbt', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m18:54:41.700810 [debug] [MainThread]: Tracking: tracking
+[0m18:54:41.702246 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\iliop\Documents\ecommerce-analytics-dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m18:54:41.703287 [debug] [MainThread]: Command `dbt run` failed at 18:54:41.703287 after 0.17 seconds
+[0m18:54:41.704287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B6224A8050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B622496C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B622497090>]}
+[0m18:54:41.705288 [debug] [MainThread]: Flushing usage events
+[0m18:54:42.708439 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:18:28.945058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C9993CC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C99967790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C999677D0>]}
+
+
+============================== 09:18:28.952902 | 138230fb-ceab-40c3-ac39-440725426ccc ==============================
+[0m09:18:28.952902 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m09:18:28.953905 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\iliop\\.dbt', 'invocation_command': 'dbt run', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m09:18:28.954906 [debug] [MainThread]: Tracking: tracking
+[0m09:18:28.954906 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\iliop\Documents\ecommerce-analytics-dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m09:18:28.957022 [debug] [MainThread]: Command `dbt run` failed at 09:18:28.957022 after 0.16 seconds
+[0m09:18:28.957022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C99870C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C99867250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C99866A90>]}
+[0m09:18:28.958025 [debug] [MainThread]: Flushing usage events
+[0m09:18:29.893853 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:54:08.960974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B94B7009D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B94B703190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B94B700810>]}
+
+
+============================== 13:54:08.969249 | fc7eb571-3777-4402-a2c6-1525feb0dfd4 ==============================
+[0m13:54:08.969249 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m13:54:08.970427 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\iliop\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m13:54:08.971493 [debug] [MainThread]: Tracking: tracking
+[0m13:54:08.972506 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\iliop\Documents\ecommerce-analytics-dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:54:08.973605 [debug] [MainThread]: Command `dbt run` failed at 13:54:08.973605 after 0.15 seconds
+[0m13:54:08.974614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B94B815D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B94B6F6D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B94B6F6ED0>]}
+[0m13:54:08.975642 [debug] [MainThread]: Flushing usage events
+[0m13:54:09.936349 [debug] [MainThread]: An error was encountered while trying to flush usage events

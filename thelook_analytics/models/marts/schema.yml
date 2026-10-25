@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Fact table containing order-level aggregated sales, cost, margin metrics, and fulfillment status."
+    columns:
+      - name: order_id
+        description: "Primary key of the order."
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "Foreign key referencing the user dimension table."
+        tests:
+          - not_null
+      - name: order_status
+        description: "Fulfillment and lifecycle status of the order."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Complete', 'Cancelled', 'Processing', 'Shipped', 'Returned']
+
+  - name: dim_users
+    description: "Dimension table for users enriched with lifetime order metrics and registration details."
+    columns:
+      - name: user_id
+        description: "Primary key of the user."
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer contact email address."
+        tests:
+          - not_null

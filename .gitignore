@@ -1,0 +1,7 @@
+﻿venv/
+.venv/
+thelook_analytics/target/
+thelook_analytics/dbt_packages/
+thelook_analytics/logs/
+*.json
+profiles.yml
