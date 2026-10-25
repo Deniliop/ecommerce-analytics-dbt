@@ -1,11 +1,20 @@
-# TheLook eCommerce Analytics Pipeline with dbt & BigQuery
+# 🛒 TheLook eCommerce Analytics Pipeline with dbt & BigQuery
 
-End-to-end data transformation pipeline implementing Medallion Architecture (Staging -> Intermediate -> Marts) using dbt Core and Google BigQuery.
+An end-to-end modern data stack pipeline implementing Medallion Architecture (Staging ➔ Intermediate ➔ Marts) using **dbt Core** and **Google BigQuery** on the public `thelook_ecommerce` dataset.
 
-## Architecture & Lineage
+---
+
+## 🏗️ Architecture & Lineage
 
 ```mermaid
 graph LR
+    subgraph Sources
+        src_orders[(orders)]
+        src_items[(order_items)]
+        src_users[(users)]
+        src_products[(products)]
+    end
+
     subgraph Staging
         stg_orders[stg_orders]
         stg_items[stg_order_items]
@@ -22,6 +31,11 @@ graph LR
         dim_users[dim_users]
     end
 
+    src_orders --> stg_orders
+    src_items --> stg_items
+    src_users --> stg_users
+    src_products --> stg_products
+
     stg_orders --> int_details
     stg_items --> int_details
     stg_products --> int_details
@@ -32,63 +46,64 @@ graph LR
     stg_users --> dim_users
     stg_orders --> dim_users
     fct_orders --> dim_users
+```
 
+---
 
---📂 Project Structure & Medallion Layers
-Staging Layer (Materialized as Views):
+## 📂 Project Structure & Medallion Layers
 
-stg_orders: Type casting of timestamps, column renaming, and standardizing status fields.
+* **Staging Layer (Materialized as Views):**
+  * `stg_orders`: Type casting of timestamps, column renaming, and standardizing status fields.
+  * `stg_order_items`: Line-item transactions with sale prices and product references.
+  * `stg_products`: Product catalog with retail prices, costs, and brand categorization.
+  * `stg_users`: Customer profiles, registration metadata, and geographic attributes.
 
-stg_order_items: Line-item transactions with sale prices and product references.
+* **Intermediate Layer (Materialized as Views):**
+  * `int_order_items_detailed`: Denormalized line-item table joining order items with product cost data to compute item-level gross margins.
 
-stg_products: Product catalog with retail prices, costs, and brand categorization.
+* **Marts Layer (Materialized as Tables):**
+  * `fct_orders`: Star-schema fact table aggregating order metrics (gross revenue, item counts, product costs, total profit margins, and fulfillment statuses).
+  * `dim_users`: Customer dimension enriched with lifetime value (LTV), total order counts, and first/last order acquisition dates.
 
-stg_users: Customer profiles, registration metadata, and geographic attributes.
+---
 
-Intermediate Layer (Materialized as Views):
+## 🧪 Data Quality & Testing
 
-int_order_items_detailed: Denormalized line-item table joining order items with product cost data to compute item-level gross margins.
+Schema validations are configured in `models/marts/schema.yml` to ensure data integrity:
+* **Primary Key Assertions:** `unique` and `not_null` tests on `order_id` and `user_id`.
+* **Referential Integrity:** Validated relationship references between fact and dimension tables.
+* **Domain Validation:** `accepted_values` test enforcing permissible order lifecycle statuses (`Complete`, `Cancelled`, `Processing`, `Shipped`, `Returned`).
 
-Marts Layer (Materialized as Tables):
+---
 
-fct_orders: Star-schema fact table aggregating order metrics (gross revenue, item counts, product costs, total profit margins, and fulfillment statuses).
+## 🚀 Getting Started
 
-dim_users: Customer dimension enriched with lifetime value (LTV), total order counts, and first/last order acquisition dates.
+### Prerequisites
+* Python 3.10+
+* Google Cloud Platform account with BigQuery enabled
+* Google Cloud CLI (`gcloud`) authenticated via OAuth or Service Account
 
---🧪 Data Quality & Testing
-Schema validations are configured in models/marts/schema.yml to ensure data integrity:
+### Installation & Run
 
-Primary Key Assertions: unique and not_null tests on order_id and user_id.
+1. **Activate Virtual Environment:**
+   ```powershell
+   .\venv\Scripts\Activate.ps1
+   cd thelook_analytics
+   ```
 
-Referential Integrity: Validated relationship references between fact and dimension tables.
+2. **Verify Connections:**
+   ```powershell
+   dbt debug
+   ```
 
-Domain Validation: accepted_values test enforcing permissible order lifecycle statuses (Complete, Cancelled, Processing, Shipped, Returned).
+3. **Build Models & Run Tests:**
+   ```powershell
+   dbt run
+   dbt test
+   ```
 
---🚀 Getting Started
-Prerequisites
-Python 3.10+
-
-Google Cloud Platform account with BigQuery enabled
-
-Google Cloud CLI (gcloud) authenticated via OAuth or Service Account
-
-Installation & Run
-Activate Virtual Environment:
-
-PowerShell
-.\venv\Scripts\Activate.ps1
-cd thelook_analytics
-Verify Connections:
-
-PowerShell
-dbt debug
-Build Models & Run Tests:
-
-PowerShell
-dbt run
-dbt test
-Launch Documentation & Lineage Graph:
-
-PowerShell
-dbt docs generate
-dbt docs serve
+4. **Launch Documentation & Lineage Graph:**
+   ```powershell
+   dbt docs generate
+   dbt docs serve
+   ```
