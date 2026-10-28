@@ -144,6 +144,40 @@ DIVIDE([Repeat Customers], [Active Customers], 0)
    .\venv\Scripts\Activate.ps1
    cd thelook_analytics
    ```
+2. **Verify Connection:**   
+   ```powershell
+   dbt debug
+   ```
+3. **Build Models & Run Tests:**
+   ```powershell
+   dbt run
+   dbt test
+   ```
+4. **Launch Documentation & Lineage Graph:**
+   ```powershell
+   dbt docs generate
+   dbt docs serve
+   ```
+5. **Power BI Setup & Publishing:**
+   - **Data Ingestion:**
+     ```text
+     Get Data -> Google BigQuery -> Select dataset -> Import 'fct_orders' & 'dim_users'
+     ```
+   - **Data Modeling (Star Schema):**
+     ```text
+     dim_users[user_id] 1 <---> * fct_orders[user_id] (Single Cross Filter Direction)
+     ```
+   - **Measures Table:**
+     ```text
+     Enter Data -> Table: _Measures -> Implement DAX measures (Currency $, Percentage %, Integer)
+     ```
+   - **Deployment:**
+     ```text
+     Home Ribbon -> Publish -> Select Power BI Service Workspace -> Configure Scheduled Refresh
+     ```
 
-👤 Author
+
+
+##👤 ###Author
 --Dennis Iliopoulos https://github.com/Deniliop
+---
