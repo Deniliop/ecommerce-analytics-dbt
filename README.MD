@@ -51,7 +51,7 @@ graph LR
     stg_users --> dim_users
     stg_orders --> dim_users
     fct_orders --> dim_users
-
+```
 
 📂 Project Structure & Medallion Layers
 Staging Layer (Materialized as Views):
