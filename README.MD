@@ -53,24 +53,29 @@ graph LR
     fct_orders --> dim_users
 ```
 
-📂 Project Structure & Medallion Layers
-Staging Layer (Materialized as Views):
---stg_orders: Type casting of timestamps, column renaming, and standardizing status fields.--stg_order_items: Line-item transactions with sale prices and product references.
---stg_products: Product catalog with retail prices, costs, and brand categorization.
---stg_users: Customer profiles, registration metadata, and geographic attributes.
+## 📂 Project Structure & Medallion Layers
 
-Intermediate Layer (Materialized as Views):
---int_order_items_detailed: Denormalized line-item table joining order items with product cost data to compute item-level gross margins.
+- **Staging Layer (Materialized as Views):**
+  - `stg_orders`: Type casting of timestamps, column renaming, and standardizing status fields.
+  - `stg_order_items`: Line-item transactions with sale prices and product references.
+  - `stg_products`: Product catalog with retail prices, costs, and brand categorization.
+  - `stg_users`: Customer profiles, registration metadata, and geographic attributes.
 
-Marts Layer (Materialized as Tables):
---fct_orders: Star-schema fact table aggregating order metrics (gross revenue, item counts, product costs, total profit margins, and fulfillment statuses).
---dim_users: Customer dimension enriched with lifetime value (LTV), total order counts, and first/last order acquisition dates.
+- **Intermediate Layer (Materialized as Views):**
+  - `int_order_items_detailed`: Denormalized line-item table joining order items with product cost data to compute item-level gross margins.
 
-🧪 Data Quality & Testing
-Schema validations are configured in models/marts/schema.yml to ensure data integrity:
---Primary Key Assertions: unique and not_null tests on order_id and user_id.
---Referential Integrity: Validated relationship references between fact and dimension tables.
---Domain Validation: accepted_values test enforcing permissible order lifecycle statuses (Complete, Cancelled, Processing, Shipped, Returned).
+- **Marts Layer (Materialized as Tables):**
+  - `fct_orders`: Star-schema fact table aggregating order metrics (gross revenue, item counts, product costs, total profit margins, and fulfillment statuses).
+  - `dim_users`: Customer dimension enriched with lifetime value (LTV), total order counts, and first/last order acquisition dates.
+
+---
+
+## 🧪 Data Quality & Testing
+
+Schema validations are configured in `models/marts/schema.yml` to ensure data integrity:
+- **Primary Key Assertions:** `unique` and `not_null` tests on `order_id` and `user_id`.
+- **Referential Integrity:** Validated relationship references between fact and dimension tables.
+- **Domain Validation:** `accepted_values` test enforcing permissible order lifecycle statuses (`Complete`, `Cancelled`, `Processing`, `Shipped`, `Returned`).
 
 📈 Power BI Reporting Layer
 The dimensional models (fct_orders, dim_users) are consumed by a 2-page executive report in Microsoft Power BI Desktop & Service, optimized with custom DAX calculations and cross-filtering:
