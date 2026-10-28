@@ -127,37 +127,23 @@ Repeat Customer Rate % =
 DIVIDE([Repeat Customers], [Active Customers], 0)
 ```
 
-🚀 Getting Started
-Prerequisites
-1.Python 3.10+
-2.Google Cloud Platform account with BigQuery enabled
-3.Google Cloud CLI (gcloud) authenticated via OAuth or Service Account
-4.Microsoft Power BI Desktop
+## 🚀 Getting Started
 
-Installation & Run
-1.Activate Virtual Environment:
---PowerShell
-.\venv\Scripts\Activate.ps1
-cd thelook_analytics
+### Prerequisites
+- Python 3.10+
+- Google Cloud Platform account with BigQuery enabled
+- Google Cloud CLI (`gcloud`) authenticated via OAuth or Service Account
+- Microsoft Power BI Desktop
 
-2.Verify Connections:
---PowerShell
-dbt debug
+---
 
-3.Build Models & Run Tests:
---PowerShell
-dbt run
-dbt test
+### Installation & Execution Steps
 
-4.Launch Documentation & Lineage Graph:
---PowerShell
-dbt docs generate
-dbt docs serve
-
-5.Power BI Setup:
---Open Power BI Desktop and connect to Google BigQuery.
---Import fct_orders and dim_users from your dataset.
---Build relationships on user_id (1:N) and apply the DAX measures provided above.
+1. **Activate Virtual Environment:**
+   ```powershell
+   .\venv\Scripts\Activate.ps1
+   cd thelook_analytics
+   ```
 
 👤 Author
 --Dennis Iliopoulos https://github.com/Deniliop
