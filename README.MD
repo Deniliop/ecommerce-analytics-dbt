@@ -125,7 +125,7 @@ CALCULATE(
 
 Repeat Customer Rate % = 
 DIVIDE([Repeat Customers], [Active Customers], 0)
-
+```
 
 🚀 Getting Started
 Prerequisites
