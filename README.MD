@@ -77,23 +77,32 @@ Schema validations are configured in `models/marts/schema.yml` to ensure data in
 - **Referential Integrity:** Validated relationship references between fact and dimension tables.
 - **Domain Validation:** `accepted_values` test enforcing permissible order lifecycle statuses (`Complete`, `Cancelled`, `Processing`, `Shipped`, `Returned`).
 
-📈 Power BI Reporting Layer
-The dimensional models (fct_orders, dim_users) are consumed by a 2-page executive report in Microsoft Power BI Desktop & Service, optimized with custom DAX calculations and cross-filtering:
+## 📈 Power BI Reporting Layer
 
-1. Executive OverviewCore 
---KPIs: Total Revenue ($), `Total Profit` ($), Profit Margin %, and AOV.
---Revenue vs. Margin Trend: Line and clustered column chart showing monthly sales volume against margin stability.
---Geographic & Demographics: Revenue breakdown by top international markets and customer age brackets (<20, 20-35, 36-50, 51-65, 65+).
---Order Status: Donut visual tracking order completion, cancellation, and return rates.
+The dimensional models (`fct_orders`, `dim_users`) are consumed by a 2-page executive report in Microsoft Power BI Desktop & Service, optimized with custom DAX calculations and cross-filtering:
 
-2. Customer Analytics
---Retention Metrics: Total Customers, Active Customers, Repeat Customer Rate %, and Average CLV.--Acquisition Trends: Customer account creation momentum over time.
---Traffic Channels: Sales volume attributed to traffic sources (Search, Organic, Facebook, Display, Email).
---Order Frequency Segmentation: Customer distribution categorized by purchase count (1 Order, 2-3 Orders, 4-5 Orders, 6+ Orders).
---VIP Performance: Top lifetime contributors matrix.
+### 1. Executive Overview
+- **Core KPIs:** `Total Revenue` ($), `Total Profit` ($), `Profit Margin %`, and `AOV`.
+- **Revenue vs. Margin Trend:** Line and clustered column chart showing monthly sales volume against margin stability.
+- **Geographic & Demographics:** Revenue breakdown by top international markets and customer age brackets (`<20`, `20-35`, `36-50`, `51-65`, `65+`).
+- **Order Status:** Donut visual tracking order completion, cancellation, and return rates.
 
-📐 Core DAX Measures
+![Executive Overview](assets/executive_overview.png)
 
+### 2. Customer Analytics
+- **Retention Metrics:** `Total Customers`, `Active Customers`, `Repeat Customer Rate %`, and `Average CLV`.
+- **Acquisition Trends:** Customer account creation momentum over time.
+- **Traffic Channels:** Sales volume attributed to traffic sources (Search, Organic, Facebook, Display, Email).
+- **Order Frequency Segmentation:** Customer distribution categorized by purchase count (`1 Order`, `2-3 Orders`, `4-5 Orders`, `6+ Orders`).
+- **VIP Performance:** Top lifetime contributors matrix.
+
+![Customer Analytics](assets/customer_analytics.png)
+
+---
+
+## 📐 Core DAX Measures
+
+```dax
 -- Total Revenue
 Total Revenue = SUM('fct_orders'[sale_price])
 
